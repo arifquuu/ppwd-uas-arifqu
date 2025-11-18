@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosen & Staff - Sistem Informasi FMIPA UNTAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo-untan.png" alt="Logo UNTAN" class="logo-img">
+                    <div class="logo-text">
+                        <strong>Sistem Informasi</strong>
+                        <span>FMIPA UNTAN</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li class="nav-item"><a href="akademik.html" class="nav-link">Akademik</a></li>
+                    <li class="nav-item"><a href="dosen.html" class="nav-link active">Dosen</a></li>
+                </ul>
+                <a href="index.html#kontak" class="btn btn-primary">Kontak</a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Dosen & Staff Pengajar</h1>
+                <p>Tenaga pengajar profesional di Program Studi Sistem Informasi FMIPA UNTAN.</p>
+            </div>
+        </section>
+
+        <section class="dosen-list">
+            <div class="container">
+                <div class="dosen-grid">
+
+                    <div class="dosen-card">
+                        <img src="foto-rennyy.png" alt="Foto Dosen Renny Puspita Sari">
+                        <h3>Renny Puspita Sari, ST., MT.</h3>
+                        <p class="dosen-jabatan">Ketua Jurusan Sistem Informasi</p>
+                    </div>
+
+                    <div class="dosen-card">
+                        <img src="foto-nurul.jpeg" alt="Foto Dosen Nurul Mutiah">
+                        <h3>Nurul Mutiah, ST., MT.</h3>
+                        <p class="dosen-jabatan">Ketua Kelompok Keahlian<br>Manajemen Sistem Informasi</p>
+                    </div>
+
+                    <div class="dosen-card">
+                        <img src="foto-ilham.jpg" alt="Foto Dosen Ilhamsyah">
+                        <h3>Ilhamsyah, S.Si., M.Cs.</h3>
+                        <p class="dosen-jabatan">Ketua Kelompok Keahlian<br>Intelejensi Bisnis</p>
+                    </div>
+
+                    <div class="dosen-card">
+                        <img src="foto-dian.jpeg" alt="Foto Dosen Dian Prawira">
+                        <h3>Dian Prawira, ST., M.Eng.</h3>
+                        <p class="dosen-jabatan">Ketua Kelompok Keahlian<br>Pengembangan Perangkat Lunak</p>
+                    </div>
+
+                    <div class="dosen-card">
+                        <img src="foto-syahru.jpeg" alt="Foto Dosen Syahru Rahmayuda">
+                        <h3>Syahru Rahmayuda, S.Kom., M.Kom.</h3>
+                        <p class="dosen-jabatan">Anggota Kelompok Keahlian<br>Intelejensi Bisnis</p>
+                    </div>
+
+                    <div class="dosen-card">
+                        <img src="foto-ibnur.png" alt="Foto Dosen Ibnur Rusi">
+                        <h3>Ibnur Rusi, S.Kom., MM.</h3>
+                        <p class="dosen-jabatan">Sekretaris Jurusan Sistem Informasi</p>
+                    </div>
+                    
+                    <div class="dosen-card">
+                        <img src="foto-ferdy.jpg" alt="Foto Dosen Ferdy Febriyanto">
+                        <h3>Ferdy Febriyanto, S.Kom., M.Kom.</h3>
+                        <p class="dosen-jabatan">Anggota Kelompok Keahlian<br>Pengembangan Perangkat Lunak</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Program Studi Sistem Informasi, FMIPA UNTAN. Dibuat sebagai bagian dari Proyek Akhir.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ambil elemen hamburger
+        const hamburger = document.querySelector(".hamburger");
+        // Ambil menu navigasi
+        const navMenu = document.querySelector(".nav-menu");
+        // Ambil tombol Kontak
+        const navButton = document.querySelector(".header .btn-primary");
+
+        // Tambahkan event 'click' ke hamburger
+        hamburger.addEventListener("click", () => {
+            // Toggle class 'active' pada hamburger
+            hamburger.classList.toggle("active");
+            // Toggle class 'active' pada menu
+            navMenu.classList.toggle("active");
+            // Toggle class 'active' pada tombol kontak
+            navButton.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

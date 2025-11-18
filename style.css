@@ -1,0 +1,714 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #0056b3; 
+    --secondary-color: #f7b733; 
+    --dark-color: #222;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ol, ul {
+    margin-left: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #00418a;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+.btn-secondary:hover {
+    background-color: #f5ab13;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    margin-left: 10px;
+}
+.btn-outline:hover {
+    background-color: #fff;
+    color: var(--dark-color);
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+}
+
+.logo-img {
+    height: 50px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.logo-text strong {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.logo-text span {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none; 
+    cursor: pointer;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--dark-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 40, 85, 0.8)), url("hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.profil-singkat {
+    background-color: #fff; 
+    padding: 80px 0; 
+}
+
+.profil-singkat h2 {
+    margin-bottom: 40px; 
+}
+
+.profil-content {
+    display: flex;
+    align-items: center;
+    gap: 60px; 
+    background-color: var(--light-color); 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+}
+
+.profil-text {
+    flex: 1.2; 
+    padding-right: 20px; 
+}
+
+.keahlian-list {
+    margin: 25px 0 30px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.keahlian-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.keahlian-item .icon {
+    font-size: 1.8rem; 
+    margin-right: 15px;
+    color: var(--primary-color); 
+}
+
+.keahlian-item p {
+    margin: 0; 
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.profil-image {
+    flex: 0.8; 
+    text-align: center; 
+}
+.profil-image img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    border: 5px solid #fff; 
+}
+
+.visi-misi {
+    background-color: var(--light-color); 
+}
+
+.visi-misi .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    align-items: stretch; 
+}
+
+.visi, 
+.misi {
+    background-color: #fff; 
+    padding: 30px 35px;
+    border-radius: 10px; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); 
+}
+
+.visi {
+    border-left: 5px solid var(--primary-color); 
+}
+
+.misi {
+    border-left: 5px solid var(--secondary-color); 
+}
+
+.misi ol {
+    margin-left: 0;
+    padding-left: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.misi li {
+    line-height: 1.7; 
+}
+
+.infografik {
+    background: url('bersama.jpg') no-repeat center bottom/cover;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.infografik::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 40, 85, 0.85); 
+    z-index: 1;
+}
+
+.infografik h2 {
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.info-box {
+    background: rgba(255,255,255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.info-angka {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.info-box p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.kontak {
+    background-color: var(--light-color);
+}
+.kontak h2 {
+    color: var(--dark-color);
+}
+.kontak p {
+    text-align: center;
+    max-width: 600px;
+    margin: -10px auto 40px auto;
+}
+
+.kontak-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.kontak-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    justify-content: center; 
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    margin-bottom: 0; 
+}
+
+.kontak-icon {
+    font-size: 2.2rem; 
+    color: var(--primary-color);
+    margin-top: -5px; 
+    flex-shrink: 0; 
+    width: 40px;
+    text-align: center;
+}
+
+.kontak-teks {
+    display: flex;
+    flex-direction: column;
+}
+
+.kontak-teks strong {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 5px; 
+}
+
+.kontak-teks p {
+    margin: 0;
+    padding: 0;
+    text-align: left; 
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.kontak-map iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%; 
+    min-height: 350px;
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: #aaa;
+    padding: 30px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        margin-left: -15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none; 
+    }
+
+    .btn-primary {
+        display: none; 
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+    
+    .profil-content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .profil-text {
+        padding-right: 0;
+    }
+    
+    .keahlian-list {
+        margin: 20px 0;
+    }
+    .keahlian-item {
+        padding: 10px 15px;
+    }
+
+    .visi-misi .container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .kontak-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.page-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+}
+
+/* Grid untuk Kartu Dosen */
+.dosen-list {
+    background-color: var(--light-color);
+}
+
+.dosen-grid {
+    display: grid;
+    /* Tampilkan 3 kartu per baris di desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Desain Kartu Dosen */
+.dosen-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dosen-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.dosen-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Membuat foto menjadi bulat */
+    border: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.dosen-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.dosen-card .dosen-jabatan {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dosen-card .dosen-keahlian {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0;
+}
+
+/* Untuk Tablet */
+@media (max-width: 768px) {
+    .dosen-grid {
+        /* Tampilkan 2 kartu per baris di tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Untuk HP */
+@media (max-width: 480px) {
+    .dosen-grid {
+        /* Tampilkan 1 kartu per baris di HP */
+        grid-template-columns: 1fr;
+    }
+}
+
+.kurikulum-list {
+    background-color: #fff;
+    padding-bottom: 80px;
+}
+
+.kurikulum-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* Wadah Akordeon */
+.accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* Agar border-radius terlihat */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    background-color: #fff;
+    width: 100%;
+    border: none;
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--light-color);
+}
+
+.accordion-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.accordion-panel {
+    background-color: var(--light-color);
+    padding: 0 30px; 
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; 
+}
+
+.accordion-panel ul {
+    list-style-type: none;
+    padding: 25px 0 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.accordion-header.active {
+    background-color: var(--light-color);
+}
+
+.accordion-header.active .accordion-icon {
+
+}
+/* ==== CSS UNTUK MENU MOBILE AKTIF ==== */
+
+/* Animasi Hamburger menjadi 'X' saat 'active' */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: #fff;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0 30px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 99;
+    }
+    
+    .btn-primary.active {
+        display: inline-block;
+        width: 80%;
+        text-align: center;
+        margin-top: 10px; 
+    }
+}

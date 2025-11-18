@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademik - Sistem Informasi FMIPA UNTAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo-untan.png" alt="Logo UNTAN" class="logo-img">
+                    <div class="logo-text">
+                        <strong>Sistem Informasi</strong>
+                        <span>FMIPA UNTAN</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li class="nav-item"><a href="akademik.html" class="nav-link active">Akademik</a></li>
+                    <li class="nav-item"><a href="dosen.html" class="nav-link">Dosen</a></li>
+                </ul>
+                <a href="index.html#kontak" class="btn btn-primary">Kontak</a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Kurikulum & Mata Kuliah</h1>
+                <p>Mata kuliah Program Studi Sistem Informasi (Semester 1-3).</p>
+            </div>
+        </section>
+
+        <section class="kurikulum-list">
+            <div class="container">
+                <p class="kurikulum-intro">Berikut adalah sebaran mata kuliah untuk tiga semester pertama. Klik pada semester untuk melihat detail mata kuliah.</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Semester 1
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <ul>
+                                <li>Matematika</li>
+                                <li>Bahasa Inggris</li>
+                                <li>Manajemen dan Organisasi</li>
+                                <li>Bahasa Indonesia</li>
+                                <li>Aljabar Linear</li>
+                                <li>Pemrograman Komputer</li>
+                                <li>Praktikum Pemrograman Komputer</li>
+                                <li>Pengantar Teknologi dan Sistem Informasi</li>
+                                <li>Manajemen Proses Bisnis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Semester 2
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <ul>
+                                <li>Agama</li>
+                                <li>Statistika dan Probabilitas</li>
+                                <li>Perancangan UI/UX</li>
+                                <li>Algoritma dan Struktur Data</li>
+                                <li>Praktikum Algoritma dan Struktur Data</li>
+                                <li>Design dan Manajemen Jaringan</li>
+                                <li>Analisis dan Perancangan Sistem Informasi</li>
+                                <li>Pancasila</li>
+                                <li>Manajemen Hubungan Pelanggan</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Semester 3
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-panel">
+                            <ul>
+                                <li>Kewarganegaraan</li>
+                                <li>Pemrograman Web Dasar</li>
+                                <li>Praktikum Pemrograman Web Dasar</li>
+                                <li>Manajemen Rantai Pasok</li>
+                                <li>Manajemen Proyek Sistem Informasi</li>
+                                <li>Rekayasa Perangkat Lunak</li>
+                                <li>Basis Data</li>
+                                <li>Pemrograman Berorientasi Objek</li>
+                                <li>Praktikum Pemrograman Berorientasi Objek</li>
+                                <li>Kewirausahaan Teknologi Informasi</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> ```
+                
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Program Studi Sistem Informasi, FMIPA UNTAN. Dibuat sebagai bagian dari Proyek Akhir.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ambil semua tombol header akordeon
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            // Tambahkan event 'click' ke setiap header
+            header.addEventListener('click', function() {
+                
+                // Toggle class 'active' pada header yang diklik
+                this.classList.toggle('active');
+                
+                // Ambil panel (konten) yang ada di sebelahnya
+                const panel = this.nextElementSibling;
+                
+                // Ambil ikon (tanda +)
+                const icon = this.querySelector('.accordion-icon');
+
+                // Cek apakah panel sedang terbuka atau tertutup
+                if (panel.style.maxHeight) {
+                    // Jika terbuka (ada maxHeight), tutup panel
+                    panel.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    // Jika tertutup (maxHeight=null), buka panel
+                    // Kita set maxHeight agar transisinya mulus
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                    icon.textContent = '−'; // Ganti ikon jadi minus
+                } 
+            });
+        });
+    </script>
+    
+    <script>
+        // Ambil elemen hamburger
+        const hamburger = document.querySelector(".hamburger");
+        // Ambil menu navigasi
+        const navMenu = document.querySelector(".nav-menu");
+        // Ambil tombol Kontak
+        const navButton = document.querySelector(".header .btn-primary");
+
+        // Tambahkan event 'click' ke hamburger
+        hamburger.addEventListener("click", () => {
+            // Toggle class 'active' pada hamburger
+            hamburger.classList.toggle("active");
+            // Toggle class 'active' pada menu
+            navMenu.classList.toggle("active");
+            // Toggle class 'active' pada tombol kontak
+            navButton.classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>
