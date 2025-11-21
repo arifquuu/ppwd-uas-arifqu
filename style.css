@@ -763,41 +763,92 @@ img {
 .accordion-header.active .accordion-icon {
 
 }
-/* ==== CSS UNTUK MENU MOBILE AKTIF ==== */
-
-/* Animasi Hamburger menjadi 'X' saat 'active' */
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-@media (max-width: 768px) {
-
+    /* === MENU SAAT AKTIF (GAYA BARU: CLEAN DROPDOWN) === */
     .nav-menu.active {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        background-color: #fff;
-        position: absolute;
-        top: 80px;
+        
+        /* Posisi & Ukuran */
+        position: absolute; /* Bukan fixed, agar ikut scroll jika perlu */
+        top: 80px; /* Tepat di bawah header */
         left: 0;
         width: 100%;
-        padding: 20px 0 30px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        height: auto; /* Tingginya menyesuaikan isi saja, TIDAK FULL SCREEN */
+        
+        /* Tampilan Visual */
+        background-color: #fff;
+        padding: 30px 0 40px 0; /* Bantalan atas bawah yang lega */
+        border-bottom-left-radius: 25px; /* Sudut melengkung di bawah */
+        border-bottom-right-radius: 25px; /* Sudut melengkung di bawah */
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Bayangan lembut */
         z-index: 99;
-    }
-    
-    .btn-primary.active {
-        display: inline-block;
-        width: 80%;
-        text-align: center;
-        margin-top: 10px; 
+        gap: 25px; /* Jarak antar menu */
+        
+        /* Animasi Slide Down */
+        animation: slideDown 0.3s ease-out forwards;
     }
 
+    /* Gaya Link Menu (Bersih tanpa garis) */
+    .nav-menu.active .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-menu.active .nav-link {
+        font-size: 1.2rem; /* Ukuran font pas */
+        font-weight: 500;
+        color: #555; /* Abu tua elegan */
+        transition: color 0.3s;
+    }
+    
+    /* Warna saat menu aktif/dipilih */
+    .nav-menu.active .nav-link.active {
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    /* Tombol Kontak Mobile */
+    .mobile-kontak {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .mobile-kontak .btn-primary {
+        width: 80%; /* Tidak terlalu lebar */
+        display: inline-block;
+        padding: 12px;
+        border-radius: 50px; /* Tombol bulat kapsul */
+        box-shadow: 0 5px 15px rgba(0, 86, 179, 0.2);
+    }
+
+    /* Animasi Hamburger */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Layout Lainnya */
+    .hero h1 { font-size: 2.2rem; }
+    .hero h2 { font-size: 1.4rem; }
+    .profil-content, .visi-misi .container, .kontak-wrapper { flex-direction: column; grid-template-columns: 1fr; }
+    .info-grid, .dosen-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+/* Animasi Slide Down */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HP Layar Kecil */
+@media (max-width: 480px) {
+    .info-grid, .dosen-grid { grid-template-columns: 1fr; }
+}
+/* Animasi Fade In untuk Menu */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
