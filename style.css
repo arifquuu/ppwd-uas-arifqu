@@ -1,7 +1,4 @@
-html {
-    scroll-behavior: smooth;
-}
-
+/* ==== PENGATURAN DASAR & VARIABEL ==== */
 :root {
     --primary-color: #0056b3; 
     --secondary-color: #f7b733; 
@@ -9,6 +6,10 @@ html {
     --light-color: #f8f9fa;
     --text-color: #333;
     --font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -64,6 +65,7 @@ img {
     border-radius: 8px;
 }
 
+/* ==== TOMBOL (BUTTONS) ==== */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -100,6 +102,7 @@ img {
     color: var(--dark-color);
 }
 
+/* ==== HEADER & NAVIGASI ==== */
 .header {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -124,7 +127,7 @@ img {
 
 .logo-img {
     height: 50px;
-    width: 60px;
+    width: 50px;
     margin-right: 10px;
 }
 
@@ -162,6 +165,14 @@ img {
     color: var(--primary-color);
 }
 
+/* Pengaturan Tombol Kontak (Desktop vs Mobile) */
+.mobile-kontak {
+    display: none; /* Sembunyi di desktop */
+}
+.desktop-kontak {
+    display: inline-block; /* Tampil di desktop */
+}
+
 .hamburger {
     display: none; 
     cursor: pointer;
@@ -175,20 +186,37 @@ img {
     transition: all 0.3s ease-in-out;
 }
 
+/* ==== HERO SECTION (BACKGROUND FOTO + OVERLAY) ==== */
 .hero {
-    background-image: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 40, 85, 0.8)), url("hero-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
+    width: 100%;
+    height: 60vh; 
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    /* Ganti 'hero-bg.jpg' dengan nama foto header Anda */
+    background: url('hero-bg.jpg') no-repeat center center/cover; 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 50, 100, 0.7); /* Overlay Biru Tua */
+    z-index: 1;
 }
 
 .hero-content {
     max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -210,6 +238,7 @@ img {
     margin-bottom: 30px;
 }
 
+/* ==== PROFIL SINGKAT ==== */
 .profil-singkat {
     background-color: #fff; 
     padding: 80px 0; 
@@ -271,6 +300,7 @@ img {
     border: 5px solid #fff; 
 }
 
+/* ==== VISI & MISI ==== */
 .visi-misi {
     background-color: var(--light-color); 
 }
@@ -310,7 +340,9 @@ img {
     line-height: 1.7; 
 }
 
+/* ==== INFOGRAFIK (BACKGROUND FOTO + OVERLAY) ==== */
 .infografik {
+    /* Ganti 'bersama.jpg' dengan nama foto Anda */
     background: url('bersama.jpg') no-repeat center bottom/cover;
     color: #fff;
     position: relative;
@@ -361,6 +393,7 @@ img {
     margin: 0;
 }
 
+/* ==== KONTAK AKADEMIK ==== */
 .kontak {
     background-color: var(--light-color);
 }
@@ -401,7 +434,7 @@ img {
     font-size: 2.2rem; 
     color: var(--primary-color);
     margin-top: -5px; 
-    flex-shrink: 0; 
+    flex-shrink: 0;
     width: 40px;
     text-align: center;
 }
@@ -433,6 +466,7 @@ img {
     min-height: 350px;
 }
 
+/* ==== FOOTER ==== */
 .footer {
     background-color: var(--dark-color);
     color: #aaa;
@@ -440,70 +474,7 @@ img {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .logo {
-        margin-left: -15px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav-menu {
-        display: none; 
-    }
-
-    .btn-primary {
-        display: none; 
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    .hero h2 {
-        font-size: 1.4rem;
-    }
-    
-    .profil-content {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px;
-    }
-
-    .profil-text {
-        padding-right: 0;
-    }
-    
-    .keahlian-list {
-        margin: 20px 0;
-    }
-    .keahlian-item {
-        padding: 10px 15px;
-    }
-
-    .visi-misi .container {
-        grid-template-columns: 1fr;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr 1fr; 
-    }
-
-    .kontak-wrapper {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .info-grid {
-        grid-template-columns: 1fr; 
-    }
-}
-
+/* ==== HALAMAN DOSEN & AKADEMIK ==== */
 .page-header {
     background-color: var(--primary-color);
     color: #fff;
@@ -523,19 +494,17 @@ img {
     margin: 0;
 }
 
-/* Grid untuk Kartu Dosen */
+/* CSS Dosen */
 .dosen-list {
     background-color: var(--light-color);
 }
 
 .dosen-grid {
     display: grid;
-    /* Tampilkan 3 kartu per baris di desktop */
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Desain Kartu Dosen */
 .dosen-card {
     background-color: #fff;
     border-radius: 10px;
@@ -553,7 +522,7 @@ img {
 .dosen-card img {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Membuat foto menjadi bulat */
+    border-radius: 50%; 
     border: 4px solid var(--primary-color);
     margin-bottom: 20px;
     object-fit: cover;
@@ -571,118 +540,11 @@ img {
     color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 10px;
+    line-height: 1.4;
+    min-height: 40px;
 }
 
-.dosen-card .dosen-keahlian {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 0;
-}
-
-/* ==== KODE RESPONSIVE (LENGKAP) ==== */
-
-/* Untuk Tablet & HP */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .logo {
-        margin-left: -15px;
-    }
-
-    /* Tampilkan Hamburger */
-    .hamburger {
-        display: block;
-    }
-
-    .nav-menu {
-        display: none; 
-    }
-    .btn-primary {
-        display: none; 
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    .hero h2 {
-        font-size: 1.4rem;
-    }
-    
-    .profil-content {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px;
-    }
-    .profil-text {
-        padding-right: 0;
-    }
-    .keahlian-list {
-        margin: 20px 0;
-    }
-    .keahlian-item {
-        padding: 10px 15px;
-    }
-
-    .visi-misi .container {
-        grid-template-columns: 1fr;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr 1fr; 
-    }
-
-    .kontak-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .dosen-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        background-color: #fff;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        padding: 20px 0 30px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        z-index: 99; 
-    }
-    
-    .btn-primary.active {
-        display: inline-block; 
-        width: 80%;
-        text-align: center;
-        margin-top: 10px; 
-    }
-}
-
-@media (max-width: 480px) {
-    .info-grid {
-        grid-template-columns: 1fr; 
-    }
-    
-    .dosen-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* CSS Akademik (Accordion) */
 .kurikulum-list {
     background-color: #fff;
     padding-bottom: 80px;
@@ -696,13 +558,12 @@ img {
     margin: 0 auto 40px auto;
 }
 
-/* Wadah Akordeon */
 .accordion {
     max-width: 900px;
     margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 10px;
-    overflow: hidden; /* Agar border-radius terlihat */
+    overflow: hidden; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
@@ -748,7 +609,7 @@ img {
 }
 
 .accordion-panel ul {
-    list-style-type: none;
+    list-style: none;
     padding: 25px 0 25px 20px;
     display: flex;
     flex-direction: column;
@@ -760,9 +621,22 @@ img {
     background-color: var(--light-color);
 }
 
-.accordion-header.active .accordion-icon {
+/* ==== KODE RESPONSIVE MOBILE (VERSI CLEAN & COMPACT) ==== */
 
-}
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .logo { margin-left: -10px; }
+    
+    /* Reset padding list */
+    ul.nav-menu { padding: 0; margin: 0; }
+
+    /* Hamburger & Header */
+    .hamburger { display: block; }
+    
+    /* Sembunyikan elemen desktop default */
+    .nav-menu { display: none; } 
+    .desktop-kontak { display: none !important; }
+
     /* === MENU SAAT AKTIF (GAYA BARU: CLEAN DROPDOWN) === */
     .nav-menu.active {
         display: flex;
@@ -774,7 +648,7 @@ img {
         top: 80px; /* Tepat di bawah header */
         left: 0;
         width: 100%;
-        height: auto; /* Tingginya menyesuaikan isi saja, TIDAK FULL SCREEN */
+        height: auto; /* Tingginya menyesuaikan isi saja */
         
         /* Tampilan Visual */
         background-color: #fff;
@@ -846,9 +720,4 @@ img {
 /* HP Layar Kecil */
 @media (max-width: 480px) {
     .info-grid, .dosen-grid { grid-template-columns: 1fr; }
-}
-/* Animasi Fade In untuk Menu */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
